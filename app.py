@@ -764,24 +764,16 @@ else:
         """,
         unsafe_allow_html=True
     )
-
-
-# ============================================================
-# ACTUALIZACIÓN AUTOMÁTICA
-# ============================================================
-
 st.markdown("---")
 
-st.caption(
-    "🔄 Esta aplicación consulta Google Sheets y muestra "
-    "los registros actuales de KM_PERDIDAS."
-)
+col_actualizar, col_info = st.columns([1, 4])
 
-st.caption(
-    "Actualización automática cada 10 segundos."
-)
+with col_actualizar:
+    if st.button("🔄 Actualizar", use_container_width=True):
+        st.rerun()
 
-
-time.sleep(3)
-
-st.rerun()
+with col_info:
+    st.caption(
+        "📡 Los datos se consultan directamente desde Google Sheets. "
+        "Presione «Actualizar» para consultar los registros más recientes."
+    )
