@@ -22,7 +22,7 @@ st.set_page_config(
 # CONFIGURACIÓN GOOGLE SHEETS
 # ============================================================
 
-NOMBRE_HOJA = "KM_PERDIDAS"
+NOMBRE_HOJA = "ControlPerdidas"
 
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
