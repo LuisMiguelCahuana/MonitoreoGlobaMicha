@@ -688,50 +688,64 @@ else:
     tabla = df_mostrar[columnas_mostrar].copy()
 
 
-    # --------------------------------------------------------
-    # MOSTRAR TABLA
-    # --------------------------------------------------------
-
     st.markdown(
         """
         <style>
-
+    
         .tabla-supervisor {
             width: 100%;
             overflow-x: auto;
         }
-
+    
         .tabla-supervisor table {
             width: 100%;
             border-collapse: collapse;
             font-size: 13px;
         }
-
+    
+        /* ENCABEZADOS */
         .tabla-supervisor th {
-            background-color: #f0f2f6;
+            background-color: #1f2937 !important;
+            color: #ffffff !important;
             padding: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid #4b5563;
             text-align: center;
             white-space: nowrap;
+            font-weight: 700;
         }
-
+    
+        /* CELDAS */
         .tabla-supervisor td {
             padding: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid #4b5563;
             white-space: nowrap;
         }
-
+    
+        /* ENLACES */
         .tabla-supervisor a {
             text-decoration: none;
             font-weight: bold;
         }
-
+    
+        /* MODO OSCURO */
+        @media (prefers-color-scheme: dark) {
+    
+            .tabla-supervisor th {
+                background-color: #111827 !important;
+                color: #ffffff !important;
+                border-color: #4b5563 !important;
+            }
+    
+            .tabla-supervisor td {
+                color: #f3f4f6 !important;
+                border-color: #4b5563 !important;
+            }
+        }
+    
         </style>
         """,
         unsafe_allow_html=True
     )
-
-
     # ========================================================
     # HTML DE TABLA
     # ========================================================
@@ -768,6 +782,6 @@ st.caption(
 )
 
 
-time.sleep(10)
+time.sleep(3)
 
 st.rerun()
